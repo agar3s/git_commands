@@ -43,6 +43,8 @@ window.document.addEventListener('keyup',  function(e){
   }
 });
 
+document.body.style.overflow = 'hidden';
+
 $('#next').on('click', function(){
   next();
   return false;

@@ -28,6 +28,12 @@ pre {
 pre:before {
   content: '> ';
 }
+.presentation {
+  overflow: hidden;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
 .description {
   font-size: 1.5em;
   margin:0 0 30px;
@@ -61,6 +67,12 @@ article {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+article .centered {
+  text-align: center;
+}
+img {
+  max-height: 500px;
+}
 
 article:nth-child(1) h2{
   color: #fff;
@@ -75,6 +87,10 @@ article footer {
   position: absolute;
   bottom: 30px;
   left: 10%;
+}
+article pre a {
+  text-decoration: none;
+  color: #5fba3d;
 }
 article footer a {
   color: yellow;
