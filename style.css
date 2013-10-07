@@ -83,9 +83,26 @@ article footer:before {
   color: #fff;
   content: 'fuente: ';
 }
-button {
+a.nav {
   position: absolute;
-  top: 0;
+  z-index: 1000;
+  top: 50%;
+  width: 0; 
+  height: 0; 
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+
+  text-indent: 100%;
+  overflow: hidden;
+}
+#back {
+  left:5%;
+  border-right: 1.5em solid white;
+  
+}
+#next {
+  right: 5%;
+  border-left: 1.5em solid white;
 }
 .current,
 .no-js article {
@@ -98,6 +115,7 @@ button {
 ul{
   list-style: none;
 }
+
 .scaleUp {
 	-webkit-animation: scaleUp .7s ease both;
 	-moz-animation: scaleUp .7s ease both;

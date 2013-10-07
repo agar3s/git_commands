@@ -37,10 +37,19 @@ $(window).on('hashchange', function() {
 window.document.addEventListener('keyup',  function(e){
     var key = e.keyCode ? e.keyCode : e.which;
   if(key==37){
-    previous();
+    back();
   }else if(key==39){
     next();
   }
+});
+
+$('#next').on('click', function(){
+  next();
+  return false;
+});
+$('#back').on('click', function(){
+  back();
+  return false;
 });
 
 var next = function(){
@@ -70,7 +79,7 @@ var next = function(){
   }
 };
 
-var previous = function(){
+var back = function(){
   if(isAnimating){
     return;
   }
