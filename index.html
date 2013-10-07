@@ -1,336 +1,347 @@
-<section class='presentation'>
-  <article class='title'>
-    <header>
-      <h2>Trucos y Secretos</h2>
-    </header>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Trucos y Secretos de Git + Github </title>
+	<link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<section class='presentation'>
+		<article class='title'>
+			<header>
+				<h2>Trucos y Secretos</h2>
+			</header>
 
-    <p class='description'>
-      <img src='http://git-scm.com/images/logos/downloads/Git-Logo-White.png'/>
-    </p>
-  </article>
-  <article>
-    <header>
-      <h2>Status</h2>
-    </header>
-    
-    <pre>git status -sb</pre>
-    <pre>## branch name<br>M bla bla bla</br>M bla bla bla
-    </pre>
-    <p class='description'>
-      pending description
-    </p>
-    <footer>
-      <a href="http://git-scm.com/docs/git-status" target='_blank'>git-status</a>
-    </footer>
-  </article>
-  <article>
-    <header>
-      <h2>Log</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git log --oneline</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git log --graph</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git log -1 HEAD</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-    
-  </article>
-  <article>
-    <header>
-      <h2>Log</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git log --grep</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git log -S</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Add</h2>
-    </header>
-    <pre>git add -p</pre>
-    <p class='description'>
-      displays the log in one single line
-    </p>
-  </article>
-  <article>
-    <header>
-      <h2>Blame</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git blame file</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git blame -C file</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-            <li>
-        <pre>git blame file -L #l1,#l2</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Branch</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git branch --merged</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git branch --no-merged</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Checkout</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git checkout -b name</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git checkout - </pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Checkout</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git checkout $sha</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git checkout file</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Ctrl Z</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git revert -m 1 commit_hash</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git reset --hard</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Diff</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git diff head^ --word-diff</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git diff --word-diff</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Config</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git config --global help.autocorrect 1</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li>
-        <pre>git config --global alias.$name command</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article>
-    <header>
-      <h2>Bisect</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>git bisect</pre>
-        <p class='description'>
-          ...
-        </p>
-      </li>
-    </ul>
-  </article>
-  <article class='title'>
-    <header>
-      <h2>Github</h2>
-    </header>
+			<p class='description'>
+				<img src='http://git-scm.com/images/logos/downloads/Git-Logo-White.png'/>
+			</p>
+		</article>
+		<article>
+			<header>
+				<h2>Status</h2>
+			</header>
 
-    <p class='description'>
-      <img src=''/>
-    </p>
-  </article>
-  <article>
-    <header>
-      <h2>Shortener</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>curl -i http://git.io -F "url=https://github.com/..."</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-      <li><a href="http://git.io/nxVVig">git.io/nxVVig</a></li>
-    </ul>
-  </article>
-    <article>
-    <header>
-      <h2>Shorcuts</h2>
-    </header>
-    <ul>
-      <li><b>?</b>Mostrar ayuda</li>
-      <li>
-        <img src='https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/1931/gs.png'/>
-      </li>
-    </ul>
-  </article>
-    <article>
-    <header>
-      <h2>Historial</h2>
-    </header>
-    <ul>
-      <li>
-        <a href="https://github.com/settings/security">github.com/settings/security</a>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-    <article>
-    <header>
-      <h2>Gist tambien son Repos</h2>
-    </header>
-    <ul>
-      <li>
-        <span>https://gist.github.com/agar3s/6675768</span>
-        <pre>git clone git://gist.github.com/6675768.git</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-    <article>
-    <header>
-      <h2>Diferencias en im&aacute;genes</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>link a cambio</pre>
-        <p class='description'>
-          poner un link al dif de una imagen
-        </p>
-      </li>
-    </ul>
-  </article>
-    <article>
-    <header>
-      <h2>HUB</h2>
-    </header>
-    <ul>
-      <li>
-        <a href='http://hub.github.com/'>hub.github.com</a>
-        <pre>hub clone agar3s/hangout</pre>
-        <pre>hub fork agar3s/hangout</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-    <article>
-    <header>
-      <h2>?</h2>
-    </header>
-    <ul>
-      <li>
-        <pre>curl -i http://git.io -F "url=https://github.com/..."</pre>
-        <p class='description'>
-          pending description
-        </p>
-      </li>
-    </ul>
-  </article>
-</section>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://tympanus.net/Development/PageTransitions/js/modernizr.custom.js"></script>
+			<pre>git status -sb</pre>
+			<pre>## branch name<br>M bla bla bla</br>M bla bla bla
+			</pre>
+			<p class='description'>
+				pending description
+			</p>
+			<footer>
+				<a href="http://git-scm.com/docs/git-status" target='_blank'>git-status</a>
+			</footer>
+		</article>
+		<article>
+			<header>
+				<h2>Log</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git log --oneline</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git log --graph</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git log -1 HEAD</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+
+		</article>
+		<article>
+			<header>
+				<h2>Log</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git log --grep</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git log -S</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Add</h2>
+			</header>
+			<pre>git add -p</pre>
+			<p class='description'>
+				displays the log in one single line
+			</p>
+		</article>
+		<article>
+			<header>
+				<h2>Blame</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git blame file</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git blame -C file</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git blame file -L #l1,#l2</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Branch</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git branch --merged</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git branch --no-merged</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Checkout</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git checkout -b name</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git checkout - </pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Checkout</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git checkout $sha</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git checkout file</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Ctrl Z</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git revert -m 1 commit_hash</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git reset --hard</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Diff</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git diff head^ --word-diff</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git diff --word-diff</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Config</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git config --global help.autocorrect 1</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li>
+					<pre>git config --global alias.$name command</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Bisect</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git bisect</pre>
+					<p class='description'>
+						...
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article class='title'>
+			<header>
+				<h2>Github</h2>
+			</header>
+
+			<p class='description'>
+				<img src=''/>
+			</p>
+		</article>
+		<article>
+			<header>
+				<h2>Shortener</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>curl -i http://git.io -F "url=https://github.com/..."</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+				<li><a href="http://git.io/nxVVig">git.io/nxVVig</a></li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Shorcuts</h2>
+			</header>
+			<ul>
+				<li><b>?</b>Mostrar ayuda</li>
+				<li>
+					<img src='https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/1931/gs.png'/>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Historial</h2>
+			</header>
+			<ul>
+				<li>
+					<a href="https://github.com/settings/security">github.com/settings/security</a>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Gist tambien son Repos</h2>
+			</header>
+			<ul>
+				<li>
+					<span>https://gist.github.com/agar3s/6675768</span>
+					<pre>git clone git://gist.github.com/6675768.git</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Diferencias en im&aacute;genes</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>link a cambio</pre>
+					<p class='description'>
+						poner un link al dif de una imagen
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>HUB</h2>
+			</header>
+			<ul>
+				<li>
+					<a href='http://hub.github.com/'>hub.github.com</a>
+					<pre>hub clone agar3s/hangout</pre>
+					<pre>hub fork agar3s/hangout</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>?</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>curl -i http://git.io -F "url=https://github.com/..."</pre>
+					<p class='description'>
+						pending description
+					</p>
+				</li>
+			</ul>
+		</article>
+	</section>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://tympanus.net/Development/PageTransitions/js/modernizr.custom.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

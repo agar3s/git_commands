@@ -1,24 +1,37 @@
-var current = 0;
-var $pages = $('section.presentation article');
+var current = parseInt((location.hash || '#0').substring(1));
+var pages = $('section.presentation article');
 var isAnimating = false;
 var endCurrPage = false;
 var endNextPage = false;
 var animEndEventNames = {
 	'WebkitAnimation' : 'webkitAnimationEnd',
-  'OAnimation' : 'oAnimationEnd',
+	'OAnimation' : 'oAnimationEnd',
 	'msAnimation' : 'MSAnimationEnd',
 	'animation' : 'animationend'
 };
-		// animation end event name
-var animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
-		// support css animations
+// animation end event name
+var animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
+// support css animations
 var support = Modernizr.cssanimations;
 
-$pages.eq(current).addClass('current');
+pages.eq(current).addClass('current');
+pages.each(function(page){
+	$(pages[page]).attr('id', page);
+});
 
-if( !support ) {
-	onEndAnimation( $currPage, $nextPage );
+if(!support){
+	onEndAnimation(currPage, nextPage);
 }
+
+$(window).on('hashchange', function() {
+  var index = parseInt((location.hash || '#-1').substring(1));
+  console.log('entro otra vez '+index);
+  if(index>=0&&index<pages.length&&index!=current){
+    $(pages[current]).attr('class', '');
+    $(pages[index]).attr('class', 'current');
+    current = index;
+  }
+});
 
 window.document.addEventListener('keyup',  function(e){
     var key = e.keyCode ? e.keyCode : e.which;
@@ -29,57 +42,59 @@ window.document.addEventListener('keyup',  function(e){
   }
 });
 
-var next = function(e){
-  if(current < $pages.length-1){
-    $currPage = $pages.eq(current);
-    $nextPage = $pages.eq(++current);
-    $currPage.addClass('moveToLeftEasing').on(animEndEventName, function(){
-	    $currPage.off(animEndEventName);
+var next = function(){
+  if(current < pages.length-1){
+    currPage = pages.eq(current);
+    nextPage = pages.eq(++current);
+    location = 'index.html#'+current;
+    currPage.addClass('moveToLeftEasing').on(animEndEventName, function(){
+	    currPage.off(animEndEventName);
 	    endCurrPage = true;
 	    if(endNextPage){
-		    onEndAnimation( $currPage, $nextPage );
+		    onEndAnimation(currPage, nextPage);
     	}
     });
     
-    $nextPage.addClass('current moveFromRight ontop').on(animEndEventName, function(){
-	    $nextPage.off(animEndEventName);
+    nextPage.addClass('current moveFromRight ontop').on(animEndEventName, function(){
+	    nextPage.off(animEndEventName);
 	    endNextPage = true;
 	    if(endCurrPage){
-		    onEndAnimation( $currPage, $nextPage);
+		    onEndAnimation(currPage, nextPage);
 	    }
     });
   }
 };
 
-var previous = function(e){
+var previous = function(){
   if(current > 0){
-    $currPage = $pages.eq(current);
-    $nextPage = $pages.eq(--current);
-    $currPage.addClass('moveToRightEasing ontop').on(animEndEventName, function(){
-	    $currPage.off(animEndEventName);
+    currPage = pages.eq(current);
+    nextPage = pages.eq(--current);
+    location = 'index.html#'+current;
+    currPage.addClass('moveToRightEasing ontop').on(animEndEventName, function(){
+	    currPage.off(animEndEventName);
 	    endCurrPage = true;
 	    if(endNextPage){
-		    onEndAnimation($currPage, $nextPage);
+		    onEndAnimation(currPage, nextPage);
     	}
     });
-    $nextPage.addClass('current moveFromLeft').on(animEndEventName, function(){
-      $nextPage.off(animEndEventName);
+    nextPage.addClass('current moveFromLeft').on(animEndEventName, function(){
+      nextPage.off(animEndEventName);
 	    endNextPage = true;
       if(endCurrPage){
-		    onEndAnimation($currPage, $nextPage);
+		    onEndAnimation(currPage, nextPage);
 	    }
     });
   }
 };
 
-	function onEndAnimation( $outpage, $inpage ) {
-		endCurrPage = false;
-		endNextPage = false;
-		resetPage( $outpage, $inpage );
-		isAnimating = false;
-	}
+function onEndAnimation(outpage, inpage){
+	endCurrPage = false;
+	endNextPage = false;
+	resetPage(outpage, inpage);
+	isAnimating = false;
+}
 
-	function resetPage( $outpage, $inpage ) {
-		$outpage.attr('class', '');
-		$inpage.attr('class', 'current');
-	}
+function resetPage(outpage, inpage){
+	outpage.attr('class', '');
+	inpage.attr('class', 'current');
+}
