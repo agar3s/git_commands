@@ -14,10 +14,12 @@ var animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
 // support css animations
 var support = Modernizr.cssanimations;
 
-pages.eq(current).addClass('current');
-pages.each(function(page){
-	$(pages[page]).attr('id', page);
+pages.each(function(index){
+  page = pages.eq(index);
+  page.attr('id', index);
+  page.data('original', page.attr('class') || '');
 });
+pages.eq(current).addClass('current');
 
 if(!support){
 	onEndAnimation(currPage, nextPage);
@@ -25,10 +27,9 @@ if(!support){
 
 $(window).on('hashchange', function() {
   var index = parseInt((location.hash || '#-1').substring(1));
-  console.log('entro otra vez '+index);
   if(index>=0&&index<pages.length&&index!=current){
-    $(pages[current]).attr('class', '');
-    $(pages[index]).attr('class', 'current');
+    pages.eq(current).removeClass('current');
+    pages.eq(index).addClass('current');
     current = index;
   }
 });
@@ -95,6 +96,6 @@ function onEndAnimation(outpage, inpage){
 }
 
 function resetPage(outpage, inpage){
-	outpage.attr('class', '');
-	inpage.attr('class', 'current');
+	outpage.attr('class', outpage.data('original'));
+	inpage.attr('class', 'current '+inpage.data('original'));
 }
