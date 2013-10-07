@@ -44,10 +44,14 @@ window.document.addEventListener('keyup',  function(e){
 });
 
 var next = function(){
+  if(isAnimating){
+    return;
+  }
   if(current < pages.length-1){
     currPage = pages.eq(current);
     nextPage = pages.eq(++current);
     location = 'index.html#'+current;
+    isAnimating = true;
     currPage.addClass('moveToLeftEasing').on(animEndEventName, function(){
 	    currPage.off(animEndEventName);
 	    endCurrPage = true;
@@ -67,10 +71,14 @@ var next = function(){
 };
 
 var previous = function(){
+  if(isAnimating){
+    return;
+  }
   if(current > 0){
     currPage = pages.eq(current);
     nextPage = pages.eq(--current);
     location = 'index.html#'+current;
+    isAnimating = true;
     currPage.addClass('moveToRightEasing ontop').on(animEndEventName, function(){
 	    currPage.off(animEndEventName);
 	    endCurrPage = true;
