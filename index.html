@@ -22,10 +22,14 @@
 			</header>
 
 			<pre>git status -sb</pre>
-			<pre>## branch name<br>M bla bla bla</br>M bla bla bla
+			<pre>## <span class="green">branch name</span>
+<span class='green'>M</span> modified.file
+<span class='red'>D</span> deleted.file
+<span class='green'>A</span> added.file
+<span class='white'>??</span> unstaged.file
 			</pre>
 			<p class='description'>
-				pending description
+				Muestra una versi&oacute;n reducida de git status
 			</p>
 			<footer>
 				<a href="http://git-scm.com/docs/git-status" target='_blank'>git-status</a>
@@ -39,19 +43,19 @@
 				<li>
 					<pre>git log --oneline</pre>
 					<p class='description'>
-						pending description
+						Despliega un commit por l&iacute;nea
 					</p>
 				</li>
 				<li>
 					<pre>git log --graph</pre>
 					<p class='description'>
-						pending description
+						Despliega el historial mostrando graficamente como estan conectados los commits
 					</p>
 				</li>
 				<li>
 					<pre>git log -1 HEAD</pre>
 					<p class='description'>
-						pending description
+						Muestra el &uacute;ltimo commit
 					</p>
 				</li>
 			</ul>
@@ -59,19 +63,19 @@
 		</article>
 		<article>
 			<header>
-				<h2>Log</h2>
+				<h2>Buscando en Log</h2>
 			</header>
 			<ul>
 				<li>
 					<pre>git log --grep</pre>
 					<p class='description'>
-						pending description
+						Busca en el mensaje del commit
 					</p>
 				</li>
 				<li>
 					<pre>git log -S</pre>
 					<p class='description'>
-						pending description
+						Busca dentro del contenido del commit
 					</p>
 				</li>
 			</ul>
@@ -82,8 +86,25 @@
 			</header>
 			<pre>git add -p</pre>
 			<p class='description'>
-				displays the log in one single line
+				seleccionar cambios especificos de un archivo o grupo de archivos para hacer commit.
 			</p>
+			<pre>
+<span class="green">y</span> - stage this hunk
+<span class="green">n</span> - do not stage this hunk
+<span class="green">q</span> - quit; do not stage this hunk nor any of the remaining ones
+<span class="green">a</span> - stage this hunk and all later hunks in the file
+<span class="green">d</span> - do not stage this hunk nor any of the later hunks in the file
+<span class="green">g</span> - select a hunk to go to
+<span class="green">/</span> - search for a hunk matching the given regex
+<span class="green">j</span> - leave this hunk undecided, see next undecided hunk
+<span class="green">J</span> - leave this hunk undecided, see next hunk
+<span class="green">k</span> - leave this hunk undecided, see previous undecided hunk
+<span class="green">K</span> - leave this hunk undecided, see previous hunk
+<span class="green">s</span> - split the current hunk into smaller hunks
+<span class="green">e</span> - manually edit the current hunk
+<span class="green">?</span> - print help
+
+			</pre>
 		</article>
 		<article>
 			<header>
@@ -93,19 +114,19 @@
 				<li>
 					<pre>git blame file</pre>
 					<p class='description'>
-						pending description
+						Muestra qui&eacute;n y cu&aacute;ndo se modific&oacute; cada l&iacute;nea de un archivo
 					</p>
 				</li>
 				<li>
 					<pre>git blame -C file</pre>
 					<p class='description'>
-						pending description
+						Incluye movimientos entre archivos
 					</p>
 				</li>
 				<li>
 					<pre>git blame file -L #l1,#l2</pre>
 					<p class='description'>
-						pending description
+						Cambios en un rango espec&iacute;fico
 					</p>
 				</li>
 			</ul>
@@ -118,13 +139,38 @@
 				<li>
 					<pre>git branch --merged</pre>
 					<p class='description'>
-						pending description
+						Muestra las ramas mezcladas.
 					</p>
 				</li>
 				<li>
 					<pre>git branch --no-merged</pre>
 					<p class='description'>
-						pending description
+						Muestra las ramas no mezcladas a&uacute;n.
+					</p>
+				</li>
+				<li>
+					<pre>git branch -D name</pre>
+					<p class='description'>
+						Eliminar una rama.
+					</p>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Branch remotos</h2>
+			</header>
+			<ul>
+				<li>
+					<pre>git branch -r</pre>
+					<p class='description'>
+						Muestra las ramas remotas.
+					</p>
+				</li>
+				<li>
+					<pre>git push origin :name</pre>
+					<p class='description'>
+						Eliminar una rama remota.
 					</p>
 				</li>
 			</ul>
@@ -137,13 +183,13 @@
 				<li>
 					<pre>git checkout -b name</pre>
 					<p class='description'>
-						pending description
+						Crea una rama y se posiciona en ella.
 					</p>
 				</li>
 				<li>
 					<pre>git checkout - </pre>
 					<p class='description'>
-						pending description
+						Regresa a la rama anterior.
 					</p>
 				</li>
 			</ul>
@@ -156,13 +202,13 @@
 				<li>
 					<pre>git checkout $sha</pre>
 					<p class='description'>
-						pending description
+						Copio la versi&oacute;n del $sha seleccionado en el directorio de trabajo.
 					</p>
 				</li>
 				<li>
 					<pre>git checkout file</pre>
 					<p class='description'>
-						pending description
+						Revierto los cambios no guardados en el stage.
 					</p>
 				</li>
 			</ul>
@@ -173,15 +219,15 @@
 			</header>
 			<ul>
 				<li>
-					<pre>git revert -m 1 commit_hash</pre>
+					<pre>git revert -m 1 $sha</pre>
 					<p class='description'>
-						pending description
+						Crea un nuevo commit deshaciendo los cambios del commit con el $sha seleccionado.
 					</p>
 				</li>
 				<li>
-					<pre>git reset --hard</pre>
+					<pre>git reset --hard $sha</pre>
 					<p class='description'>
-						pending description
+						Apunta HEAD al commit con el $sha seleccionado.
 					</p>
 				</li>
 			</ul>
@@ -192,15 +238,15 @@
 			</header>
 			<ul>
 				<li>
-					<pre>git diff head^ --word-diff</pre>
+					<pre>git diff --word-diff</pre>
 					<p class='description'>
-						pending description
+						Muestra diferencias palabra por palabra.
 					</p>
 				</li>
 				<li>
-					<pre>git diff --word-diff</pre>
+					<pre>git diff commit..commit</pre>
 					<p class='description'>
-						pending description
+						Muestra diferencias entre dos commits arbitrarios.
 					</p>
 				</li>
 			</ul>
@@ -213,13 +259,13 @@
 				<li>
 					<pre>git config --global help.autocorrect 1</pre>
 					<p class='description'>
-						pending description
+						Permite a git usar autocorregir comandos mal escritos.
 					</p>
 				</li>
 				<li>
 					<pre>git config --global alias.$name command</pre>
 					<p class='description'>
-						pending description
+						Crear alias para comandos de git.
 					</p>
 				</li>
 			</ul>
@@ -232,7 +278,7 @@
 				<li>
 					<pre>git bisect</pre>
 					<p class='description'>
-						...
+						Permite encontrar commits que introdujeron bugs a traves de b&uacute;squeda binaria.	
 					</p>
 				</li>
 			</ul>
@@ -254,7 +300,7 @@
 				<li>
 					<pre>curl -i http://git.io -F "url=https://github.com/..."</pre>
 					<p class='description'>
-						pending description
+						Crea una url corta para cualquier url de github.
 					</p>
 				</li>
 				<li><a href="http://git.io/nxVVig">git.io/nxVVig</a></li>
@@ -287,7 +333,7 @@
 			</header>
 			<ul>
 				<li>
-					<span>https://gist.github.com/agar3s/6675768</span>
+					<a href='https://gist.github.com/agar3s/6675768'>gist.github.com/agar3s/6675768</a>
 					<pre>git clone git://gist.github.com/6675768.git</pre>
 					<p class='description'>
 						pending description
@@ -329,9 +375,7 @@
 			</header>
 			<ul>
 				<li>
-					<pre>
 <a href='https://github.com/jquery/jquery/blob/master/src/core.js#L34'>https://github.com/jquery/jquery/blob/master/src/core.js#L34</a>
-</pre>
 					<p class='description'>
 						pending description
 					</p>
@@ -354,7 +398,7 @@
 					<img src='https://github.global.ssl.fastly.net/images/icons/emoji/clap.png'>
 					<img src='https://github.global.ssl.fastly.net/images/icons/emoji/laughing.png'>
 				</div>
-					<pre><a href='http://www.emoji-cheat-sheet.com/'>http://www.emoji-cheat-sheet.com/</a></pre>
+					<a href='http://www.emoji-cheat-sheet.com/'>http://www.emoji-cheat-sheet.com/</a>
 
 					<p class='description'>
 						pending description
@@ -371,9 +415,7 @@
 			</header>
 			<ul>
 				<li>
-					<pre><a href='https://github.com/jquery/jquery/commits/master?author=Krinkle'>https://github.com/jquery/jquery/commits/master?author=Krinkle
-						</a>
-					</pre>
+					<a href='https://github.com/jquery/jquery/commits/master?author=Krinkle'>https://github.com/jquery/jquery/commits/master?author=Krinkle</a>
 					<p class='description'>
 						pending description
 					</p>
@@ -386,8 +428,7 @@
 			</header>
 			<ul>
 				<li>
-					<pre><a href='https://github.com/jquery/jquery/pulse'>https://github.com/jquery/jquery/pulse</a>
-					</pre>
+					<a href='https://github.com/jquery/jquery/pulse'>https://github.com/jquery/jquery/pulse</a>
 					<p class='description'>
 						pending description
 					</p>
@@ -400,8 +441,7 @@
 			</header>
 			<ul>
 				<li>
-					<pre><a href='https://github.com/trending'>https://github.com/trending</a>
-					</pre>
+					<a href='https://github.com/trending'>https://github.com/trending</a>
 					<p class='description'>
 						pending description
 					</p>
@@ -414,8 +454,7 @@
 			</header>
 			<ul>
 				<li>
-					<pre><a href='https://github.com/jquery/jquery/blame/master/README.md'>https://github.com/jquery/jquery/blame/master/README.md</a>
-					</pre>
+					<a href='https://github.com/jquery/jquery/blame/master/README.md'>https://github.com/jquery/jquery/blame/master/README.md</a>
 					<p class='description'>
 						pending description
 					</p>
@@ -428,8 +467,7 @@
 			</header>
 			<ul>
 				<li>
-					<pre><a href='http://www.bomberbot.com'>http://www.bomberbot.com</a>
-					</pre>
+					<a href='http://www.bomberbot.com'>http://www.bomberbot.com</a>
 					<p class='description'>
 						por twitter @agar3s y por github agar3s
 						quieren enviar un correo puede a gio@codetag.me
