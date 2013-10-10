@@ -51,6 +51,7 @@ pre:before {
 .description {
   font-size: 1.5em;
   margin:0 0 30px;
+  word-spacing: 0.3em;
 }
 .description img {
   max-width: 70%;
@@ -148,6 +149,20 @@ a.nav {
   right: 5%;
   border-left: 1.5em solid white;
 }
+aside {
+  position: absolute;
+  z-index: 1000;
+  width: auto;
+  height: 48px;
+  bottom: 0;
+  right: 5%;
+  background-color: transparent;
+}
+aside a {
+  display: inline-block;
+  float: right;
+  padding: 5px;
+}
 .current,
 .no-js article {
   visibility: visible;
@@ -158,6 +173,12 @@ a.nav {
 }
 ul{
   list-style: none;
+  padding-left: 0;
+}
+
+.smaller {
+  font-size: 0.85em;
+  line-height: 1em;
 }
 
 .scaleUp {

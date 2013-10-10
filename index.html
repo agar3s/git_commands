@@ -84,26 +84,23 @@
 			<header>
 				<h2>Add</h2>
 			</header>
-			<pre>git add -p</pre>
-			<p class='description'>
-				seleccionar cambios especificos de un archivo o grupo de archivos para hacer commit.
-			</p>
-			<pre>
-<span class="green">y</span> - stage this hunk
-<span class="green">n</span> - do not stage this hunk
-<span class="green">q</span> - quit; do not stage this hunk nor any of the remaining ones
-<span class="green">a</span> - stage this hunk and all later hunks in the file
-<span class="green">d</span> - do not stage this hunk nor any of the later hunks in the file
-<span class="green">g</span> - select a hunk to go to
-<span class="green">/</span> - search for a hunk matching the given regex
-<span class="green">j</span> - leave this hunk undecided, see next undecided hunk
-<span class="green">J</span> - leave this hunk undecided, see next hunk
-<span class="green">k</span> - leave this hunk undecided, see previous undecided hunk
-<span class="green">K</span> - leave this hunk undecided, see previous hunk
-<span class="green">s</span> - split the current hunk into smaller hunks
-<span class="green">e</span> - manually edit the current hunk
-<span class="green">?</span> - print help
-
+			<pre>git add -p
+<div class="smaller">
+<span class="green">y</span> efectuar este cambio
+<span class="green">n</span> no efectuar este cambio
+<span class="green">q</span> terminar; no efectuar este cambio ni los siguientes
+<span class="green">a</span> efectuar este y los dema&aacute;s cambios en este archivo
+<span class="green">d</span> no efectuar este cambio ni ninguno de los siguientes en este archivo
+<span class="green">g</span> ir a un cambio espec&iacute;fico
+<span class="green">/</span> buscar un cambio que concuerde con el regex dado
+<span class="green">j</span> dejar esta cambio sin decidir, ver el siguiente cambio sin decidir
+<span class="green">J</span> dejar esta cambio sin decidir, ver el siguiente cambio
+<span class="green">k</span> dejar esta cambio sin decidir, ver el anterior cambio sin decidir
+<span class="green">K</span> dejar esta cambio sin decidir, ver el anterior cambio
+<span class="green">s</span> dividir este cambio en otros m&aacute;s peque&ntilde;os
+<span class="green">e</span> editar manualmente este cambio
+<span class="green">?</span> ayuda
+</div>
 			</pre>
 		</article>
 		<article>
@@ -279,6 +276,8 @@
 					<pre>git bisect</pre>
 					<p class='description'>
 						Permite encontrar commits que introdujeron bugs a traves de b&uacute;squeda binaria.	
+						<br></br>
+						<img class="centeted" src="http://kdubois.net/wp-content/uploads/2011/02/gitbisect.jpg"/>
 					</p>
 				</li>
 			</ul>
@@ -304,7 +303,7 @@
 						Crea una url corta para cualquier url de github.
 					</p>
 				</li>
-				<li><a href="http://git.io/nxVVig">git.io/nxVVig</a></li>
+				<li><a href="http://git.io/nxVVig" target='_blank'>git.io/nxVVig</a></li>
 			</ul>
 		</article>
 		<article>
@@ -313,20 +312,22 @@
 			</header>
 			<div class="centered">
 				<img src='https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/1931/gs.png'/>
+				<p class='description'>
+					? es el mejor shorcut de todos. 
+				</p>
 			</div>
 		</article>
 		<article>
 			<header>
 				<h2>Historial</h2>
 			</header>
-			<ul>
-				<li>
-					<a href="https://github.com/settings/security">github.com/settings/security</a>
-					<p class='description'>
-						pending description
-					</p>
-				</li>
-			</ul>
+			<div class="centered">
+				<a href="https://github.com/settings/security" target='_blank'>github.com/settings/security</a>
+				<img src='https://github-images.s3.amazonaws.com/help/Enterprise-user-security-history.png'/>
+				<p class='description'>
+					Historial de accesos y llaves asociadas a esta cuenta 
+				</p>
+			</div>
 		</article>
 		<article>
 			<header>
@@ -334,10 +335,10 @@
 			</header>
 			<ul>
 				<li>
-					<a href='https://gist.github.com/agar3s/6675768'>gist.github.com/agar3s/6675768</a>
+					<a href='https://gist.github.com/agar3s/6675768' target='_blank'>gist.github.com/agar3s/6675768</a>
 					<pre>git clone git://gist.github.com/6675768.git</pre>
 					<p class='description'>
-						pending description
+						cualquier gist de github puede ser clonado y manejado como un repositorio de git.
 					</p>
 				</li>
 			</ul>
@@ -346,29 +347,32 @@
 			<header>
 				<h2>Diferencias en im&aacute;genes</h2>
 			</header>
-			<ul>
-				<li>
-					<a href='https://github.com/agar3s/git_commands/commit/e24d0581e646448a980ac406707cbae0499e0100?diff-0=3-70'>github.com/agar3s/...?diff-0=3-70</a>
-					<p class='description'>
-						Github permite ver las diferencias entre dos im&aacute;genes, junto con las diferencias de c&oacute;digo;
-					</p>
-				</li>
-			</ul>
+			<div class='centered'>
+				<a href='https://github.com/agar3s/git_commands/commit/e24d0581e646448a980ac406707cbae0499e0100?diff-0=1-50' target='_blank'>
+					<img src='octodiff.png' style='float:left;display:block'/>
+				</a>
+				<a href='https://github.com/agar3s/git_commands/commit/e24d0581e646448a980ac406707cbae0499e0100?diff-0=1-50' target='_blank'>github.com/agar3s/...?diff-0=1-50</a>
+				<p class='description'>
+					Github permite ver las diferencias entre dos im&aacute;genes, junto con las diferencias de c&oacute;digo;
+				</p>
+			</div>
 		</article>
 		<article>
 			<header>
-				<h2>HUB</h2>
+				<h2>hub.github.com</h2>
 			</header>
-			<ul>
-				<li>
-					<a href='http://hub.github.com/'>hub.github.com</a>
-					<pre>hub clone agar3s/hangout</pre>
-					<pre>hub fork agar3s/hangout</pre>
-					<p class='description'>
-						github por linea de comandos
-					</p>
-				</li>
-			</ul>
+			<p class='description'>
+				github por linea de comandos
+			</p>
+			<span>Para MacOS</span>
+			<pre class='green'>brew install hub</pre>
+			<span>Otros sistemas usando Ruby</span>
+			<pre>git clone git://github.com/github/hub.git
+cd hub
+rake install
+</pre>
+			<pre>hub clone agar3s/hangout</pre>
+			<pre>hub fork agar3s/hangout</pre>
 		</article>
 		<article>
 			<header>
@@ -376,7 +380,7 @@
 			</header>
 			<ul>
 				<li>
-<a href='https://github.com/jquery/jquery/blob/master/src/core.js#L34'>https://github.com/jquery/jquery/blob/master/src/core.js#L34</a>
+<a href='https://github.com/jquery/jquery/blob/master/src/core.js#L34' target='_blank'>https://github.com/jquery/jquery/blob/master/src/core.js#L34</a>
 					<p class='description'>
 						Permite linkear a una linea especifica de c&oacute;digo en un archivo.
 					</p>
@@ -399,7 +403,7 @@
 					<img src='https://github.global.ssl.fastly.net/images/icons/emoji/clap.png'>
 					<img src='https://github.global.ssl.fastly.net/images/icons/emoji/laughing.png'>
 				</div>
-					<a href='http://www.emoji-cheat-sheet.com/'>http://www.emoji-cheat-sheet.com/</a>
+					<a href='http://www.emoji-cheat-sheet.com/' target='_blank'>http://www.emoji-cheat-sheet.com/</a>
 
 					<p class='description'>
 						haciendo mas emotivos los comentarios.
@@ -413,7 +417,7 @@
 			</header>
 			<ul>
 				<li>
-					<a href='https://github.com/jquery/jquery/commits/master?author=Krinkle'>https://github.com/jquery/jquery/commits/master?author=Krinkle</a>
+					<a href='https://github.com/jquery/jquery/commits/master?author=Krinkle' target='_blank'>https://github.com/jquery/jquery/commits/master?author=Krinkle</a>
 					<p class='description'>
 						ver solo los commits de un usuario.
 					</p>
@@ -426,7 +430,7 @@
 			</header>
 			<ul>
 				<li>
-					<a href='https://github.com/jquery/jquery/pulse'>https://github.com/jquery/jquery/pulse</a>
+					<a href='https://github.com/jquery/jquery/pulse' target='_blank'>https://github.com/jquery/jquery/pulse</a>
 					<p class='description'>
 						Metricas y graficas del proyecto.
 					</p>
@@ -439,7 +443,7 @@
 			</header>
 			<ul>
 				<li>
-					<a href='https://github.com/trending'>https://github.com/trending</a>
+					<a href='https://github.com/trending' target='_blank'>https://github.com/trending</a>
 					<p class='description'>
 						Los &uacute;ltimos repositorios destacados.
 					</p>
@@ -452,7 +456,7 @@
 			</header>
 			<ul>
 				<li>
-					<a href='https://github.com/jquery/jquery/blame/master/README.md'>https://github.com/jquery/jquery/blame/master/README.md</a>
+					<a href='https://github.com/jquery/jquery/blame/master/README.md' target='_blank'>https://github.com/jquery/jquery/blame/master/README.md</a>
 					<p class='description'>
 						el mismo git blame pero en github
 					</p>
@@ -472,7 +476,7 @@
 					<p class='notes'>
 						gracias y aprovechar para hablar de bomberbot2 y el recluting
 					</p>
-					<a href='http://www.bomberbot.com'>http://www.bomberbot.com</a>
+					<a href='http://www.bomberbot.com' target='_blank'>http://www.bomberbot.com</a>
 				</li>
 			</ul>
 		</article>
@@ -480,8 +484,20 @@
 		<a id='back' class='nav' href='#'>back</a>
 		<a id='next' class='nav' href='#'>next</a>
 	</section>
+	<aside class="a2a_kit a2a_kit_size_32 a2a_default_style">
+		<a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+		<a class="a2a_button_facebook"></a>
+		<a class="a2a_button_twitter"></a>
+		<a class="a2a_button_google_plus"></a>
+		<a class="a2a_button_tumblr"></a>
+	</aside>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="http://tympanus.net/Development/PageTransitions/js/modernizr.custom.js"></script>
 	<script src="script.js"></script>
+	<script type="text/javascript">
+	var a2a_config = a2a_config || {};
+	a2a_config.locale = "es";
+	</script>
+	<script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
 </body>
 </html>
